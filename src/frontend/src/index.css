@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+    --background: 0.955 0.025 85;
+    --foreground: 0.2 0.04 142;
+    --card: 0.98 0.01 85;
+    --card-foreground: 0.2 0.04 142;
+    --popover: 0.98 0.01 85;
+    --popover-foreground: 0.2 0.04 142;
+    --primary: 0.42 0.13 142;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.93 0.03 142;
+    --secondary-foreground: 0.35 0.12 142;
+    --muted: 0.93 0.015 85;
+    --muted-foreground: 0.5 0.04 142;
+    --accent: 0.75 0.16 65;
+    --accent-foreground: 0.15 0.02 65;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.02 85;
+    --input: 0.88 0.02 85;
+    --ring: 0.42 0.13 142;
+    --chart-1: 0.42 0.13 142;
+    --chart-2: 0.75 0.16 65;
+    --chart-3: 0.6 0.118 184.704;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.42 0.13 142;
+    --sidebar-foreground: 0.98 0 0;
+    --sidebar-primary: 0.98 0 0;
+    --sidebar-primary-foreground: 0.42 0.13 142;
+    --sidebar-accent: 0.35 0.1 142;
+    --sidebar-accent-foreground: 0.98 0 0;
+    --sidebar-border: 0.35 0.1 142;
+    --sidebar-ring: 0.75 0.16 65;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-poppins font-semibold;
+  }
+}
+
+@layer utilities {
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.45) 60%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+  }
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .gallery-item img {
+    transition: transform 0.45s ease;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.08);
+  }
+}
